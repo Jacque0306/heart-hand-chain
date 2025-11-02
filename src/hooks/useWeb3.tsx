@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useEffect, ReactNode } from "react
 import { BrowserProvider, JsonRpcProvider, JsonRpcSigner } from "ethers";
 import { BLOCKCHAIN_CONFIG, getRpcUrl } from "@/config/blockchain";
 import { useToast } from "@/hooks/use-toast";
+import { ConnectButton, useActiveAccount, useActiveWallet } from "thirdweb/react";
+import { client } from "@/config/thirdweb";
 
 interface Web3ContextType {
   provider: BrowserProvider | JsonRpcProvider | null;

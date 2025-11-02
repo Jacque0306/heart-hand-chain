@@ -1,18 +1,11 @@
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Wallet } from "lucide-react";
 import logoHelpChain from "@/assets/logo-helpchain-transparent.png";
+import { ConnectButton } from "thirdweb/react";
+import { client } from "@/config/thirdweb";
 
-interface NavbarProps {
-  onConnectWallet?: () => void;
-  walletAddress?: string;
-}
+interface NavbarProps {}
 
-export const Navbar = ({ onConnectWallet, walletAddress }: NavbarProps) => {
-  const formatAddress = (address: string) => {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`;
-  };
-
+export const Navbar = ({}: NavbarProps) => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto px-4">
@@ -30,17 +23,7 @@ export const Navbar = ({ onConnectWallet, walletAddress }: NavbarProps) => {
               Create Campaign
             </Link>
             
-            {walletAddress ? (
-              <Button variant="outline" className="gap-2">
-                <Wallet className="h-4 w-4" />
-                {formatAddress(walletAddress)}
-              </Button>
-            ) : (
-              <Button onClick={onConnectWallet} className="gap-2">
-                <Wallet className="h-4 w-4" />
-                Connect Wallet
-              </Button>
-            )}
+            <ConnectButton client={client} />
           </div>
         </div>
       </div>

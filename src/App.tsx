@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Web3Provider } from "@/hooks/useWeb3";
+import { ThirdwebProvider } from "thirdweb/react";
 import Home from "./pages/Home";
 import Campaigns from "./pages/Campaigns";
 import CreateCampaign from "./pages/CreateCampaign";
@@ -14,21 +15,23 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <Web3Provider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/campaigns" element={<Campaigns />} />
-            <Route path="/create" element={<CreateCampaign />} />
-            <Route path="/campaign/:id" element={<CampaignDetail />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </Web3Provider>
+    <ThirdwebProvider>
+      <Web3Provider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/campaigns" element={<Campaigns />} />
+              <Route path="/create" element={<CreateCampaign />} />
+              <Route path="/campaign/:id" element={<CampaignDetail />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </Web3Provider>
+    </ThirdwebProvider>
   </QueryClientProvider>
 );
 
