@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Zap, Globe } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
+import logoHelpChain from "@/assets/logo-helpchain.png";
 
 export default function Home() {
   return (
@@ -12,6 +13,9 @@ export default function Home() {
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto text-center">
           <div className="animate-fade-in">
+            <div className="flex justify-center mb-8">
+              <img src={logoHelpChain} alt="HelpChain Logo" className="h-32 w-32 drop-shadow-glow" />
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent">
               Transparent Donations
               <br />
