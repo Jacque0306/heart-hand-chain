@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Wallet } from "lucide-react";
-import logoHelpChain from "@/assets/logo-helpchain.png";
+import logoHelpChain from "@/assets/logo-helpchain-transparent.png";
 
 interface NavbarProps {
   onConnectWallet?: () => void;

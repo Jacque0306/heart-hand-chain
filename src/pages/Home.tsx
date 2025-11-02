@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Shield, Zap, Globe } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
-import logoHelpChain from "@/assets/logo-helpchain.png";
+import logoHelpChain from "@/assets/logo-helpchain-transparent.png";
 
 export default function Home() {
   return (
